@@ -5,23 +5,28 @@ import Form from "../UI/common/form";
 class UsuarioForm extends Form {
   state = {
     data: {
-      dateTime: "",
-      totalPrice: ""
+      name: "",
+      username: "",
+      password: ""
     },
     errors: {}
   };
 
   schema = {
-    dateTime: Joi.string()
+    name: Joi.string()
       .required()
-      .label("Data/Hora"),
-    totalPrice: Joi.string()
+      .label("Nome"),
+    username: Joi.string()
       .required()
-      .label("Preço Total")
+      .label("Nick"),
+    password: Joi.string()
+      .required()
+      .min(6)
+      .label("Senha")
   };
 
   doSubmit = async () => {
-    console.log("Salvar Venda");
+    console.log("Salvar Usuario");
     //await saveMovie(this.state.data);
     //this.props.history.push("/movies");
   };
@@ -31,26 +36,34 @@ class UsuarioForm extends Form {
       <React.Fragment>
         <div className="row justify-content-center">
           <div className="col-7">
-            <h2>Registrar venda</h2>
+            <h2>Registrar novo usuário</h2>
             <hr />
             <form onSubmit={this.handleSubmit}>
               <div className="row align-items-center">
                 <div className="col-1">
-                  <i className="fa fa-calendar fa-2x" aria-hidden="true" />
+                  <i className="fa fa-user fa-2x" aria-hidden="true" />
+                </div>
+                <div className="col">{this.renderInput("name", "Nome")}</div>
+              </div>
+
+              <div className="row align-items-center">
+                <div className="col-1">
+                  <i className="fa fa-at fa-2x" aria-hidden="true" />
                 </div>
                 <div className="col">
-                  {this.renderInput("name", "Data/Hora")}
+                  {this.renderInput("username", "Nick")}
                 </div>
               </div>
 
               <div className="row align-items-center">
                 <div className="col-1">
-                  <i className="fa fa-cart-plus fa-2x" aria-hidden="true" />
+                  <i className="fa fa-key fa-2x" aria-hidden="true" />
                 </div>
                 <div className="col">
-                  {this.renderInput("username", "Total")}
+                  {this.renderInput("password", "Senha", "password")}
                 </div>
               </div>
+
               {this.renderButton("Salvar")}
             </form>
           </div>

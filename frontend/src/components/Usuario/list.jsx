@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class ItemList extends Component {
+class UsuarioList extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>Tela para listar itens (Produtos)</div>
+        <div>Tela para listar Usuarios</div>
       </React.Fragment>
     );
   }
 }
 
-export default ItemList;
+export default UsuarioList;
