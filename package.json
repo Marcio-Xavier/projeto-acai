@@ -1,0 +1,23 @@
+{
+  "name": "projeto-acai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd backend && node index.js\" \"cd frontend && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcio-Xavier/projeto-acai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marcio-Xavier/projeto-acai/issues"
+  },
+  "homepage": "https://github.com/Marcio-Xavier/projeto-acai#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
