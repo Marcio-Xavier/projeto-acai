@@ -1,5 +1,3 @@
-class Index {
-	
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
@@ -14,7 +12,7 @@ const connection = mysql.createConnection({
 
 connection.connect(err => {
   if (err) {
-    return err;
+	return err;
   }
 });
 
@@ -26,22 +24,22 @@ app.get("/", (req, res) => {
 
 app.listen(4000, () => {
   console.log("Servidor aberto na porta 4000");
-});
+});	
+
 //console.log(connection); Ver config da conexão com o banco
 
-/*/----------------------------------------------------------
 const selectUsuario = "select * from usuario";
 
 app.get("/usuario", (req, res) => {
-  connection.query(selectUsuario, (err, results) => {
-    if (err) {
-      return res.json(err);
-    } else {
-      return res.json({
-        data: results
-      });
-    }
+connection.query(selectUsuario, (err, results) => {
+if (err) {
+  return res.json(err);
+} else {
+  return res.json({
+	data: results
   });
+}
+});
 });
 
 app.get("/usuario/add", (req, res) => {
@@ -55,7 +53,3 @@ app.get("/usuario/add", (req, res) => {
     }
   });
 });
-*/
-
-}
-export default Index;

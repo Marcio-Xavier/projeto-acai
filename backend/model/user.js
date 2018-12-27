@@ -1,17 +1,27 @@
-import Index from '../index.js';
+import * as Index from "../index";
 
-class User extends Index {
-	
-  app.get("/usuario", (req, res) => {
-  connection.query(selectUsuario, (err, results) => {
+const selectUsuario = "select * from usuario";
+
+Index.app.get("/usuario", (req, res) => {
+Index.connection.query(selectUsuario, (err, results) => {
+if (err) {
+  return res.json(err);
+} else {
+  return res.json({
+	data: results
+  });
+}
+});
+});
+
+Index.app.get("/usuario/add", (req, res) => {
+  const { nome, nick, senha } = req.query;
+  const insertProducts = `insert into usuario (nome, nick, senha) values ('${nome}','${nick}','${senha}')`;
+  Index.connection.query(insertProducts, (err, results) => {
     if (err) {
-      return res.json(err);
+      return res.send(err);
     } else {
-      return res.json({
-        data: results
-      });
+      return res.send("Usuario Adicionado");
     }
   });
-});	
-
-}
+});

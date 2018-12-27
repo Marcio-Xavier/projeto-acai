@@ -60,7 +60,7 @@ class Form extends Component {
     return (
       <Input
         name={name}
-        placeHolder={placeHolder}
+        placeholder={placeHolder}
         type={type}
         value={data[name]}
         onChange={this.handleChange}
