@@ -1,10 +1,9 @@
+class Index {
+	
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
-
 const app = express();
-
-const selectUsuario = "select * from usuario";
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -25,7 +24,14 @@ app.get("/", (req, res) => {
   res.send("Ola, aqui fala o servidor");
 });
 
+app.listen(4000, () => {
+  console.log("Servidor aberto na porta 4000");
+});
 //console.log(connection); Ver config da conexão com o banco
+
+/*/----------------------------------------------------------
+const selectUsuario = "select * from usuario";
+
 app.get("/usuario", (req, res) => {
   connection.query(selectUsuario, (err, results) => {
     if (err) {
@@ -37,19 +43,19 @@ app.get("/usuario", (req, res) => {
     }
   });
 });
-/*
-app.get("/products/add", (req, res) => {
-  const { name, price } = req.query;
-  const insertProducts = `insert into products (name, price) values ('${name}', ${price})`;
+
+app.get("/usuario/add", (req, res) => {
+  const { nome, nick, senha } = req.query;
+  const insertProducts = `insert into usuario (nome, nick, senha) values ('${nome}','${nick}','${senha}')`;
   connection.query(insertProducts, (err, results) => {
     if (err) {
       return res.send(err);
     } else {
-      return res.send("Produto inserido");
+      return res.send("Usuario Adicionado");
     }
   });
 });
 */
-app.listen(4000, () => {
-  console.log("Servidor aberto na porta 4000");
-});
+
+}
+export default Index;
