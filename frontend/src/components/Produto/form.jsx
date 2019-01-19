@@ -1,72 +1,49 @@
-import React from "react";
-import Joi from "joi-browser";
-import Form from "../UI/common/form";
+import React, { Component } from "react";
 
-class ProdutoForm extends Form {
-  state = {
-    data: {
-      description: "",
-      price: ""
-    },
-    type: ["Teste 3"],
-    errors: {}
-  };
-
-  schema = {
-    description: Joi.string()
-      .required()
-      .label("Descrição"),
-    price: Joi.string()
-      .required()
-      .label("Preço"),
-    type: Joi.string().label("Tipo")
-  };
-
-  doSubmit = async () => {
-    console.log("Salvar Produto");
-    //await saveMovie(this.state.data);
-    //this.props.history.push("/movies");
-  };
+class ProdutoForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="row justify-content-center">
-          <div className="col-7">
-            <h2>Registrar novo produto</h2>
-            <hr />
-            <form onSubmit={this.handleSubmit}>
-              <div className="row align-items-center">
-                <div className="col-1">
-                  <i className="fa fa-coffee fa-2x" aria-hidden="true" />
-                </div>
-                <div className="col">
-                  {this.renderInput("description", "Descrição")}
-                </div>
-              </div>
+        <p className="lead">Inserir novos produtos</p>
+        <hr />
+        <p className="lead">Formulario</p>
+        <hr />
+        <p className="lead">Tabela de produtos</p>
 
-              <div className="row align-items-center">
-                <div className="col-1">
-                  <i className="fa fa-money fa-2x" aria-hidden="true" />
+        <table className="table table-striped">
+          <thead className="thead-dark">
+            <tr>
+              <th scope="col">Descrição</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Qtd. Estoque</th>
+              <th scope="col">Observações</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Açaí 500 ml</td>
+              <td>R$ 12,00</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <div
+                  className="btn-group btn-group-toggle btn-sm"
+                  data-toggle="buttons"
+                >
+                  <label className="btn btn-info">
+                    <input type="radio" autocomplete="off" />
+                    Editar
+                  </label>
+                  <label className="btn btn-danger">
+                    <input type="radio" autocomplete="off" />
+                    Excluir
+                  </label>
                 </div>
-                <div className="col">{this.renderInput("price", "Preço")}</div>
-              </div>
-
-              <div className="row align-items-center">
-                <div className="col-1">
-                  <i
-                    className="fa fa-window-restore fa-2x"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="col">
-                  {this.renderSelect("type", "Tipo", this.state.type)}
-                </div>
-              </div>
-
-              {this.renderButton("Salvar")}
-            </form>
-          </div>
-        </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </React.Fragment>
     );
   }

@@ -6,9 +6,9 @@ class NavBar extends Component {
     return (
       <React.Fragment>
         <div>
-          <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <NavLink className="navbar-brand" to="/">
-              Home
+              <img src={require("./acai-logo.png")} className="img-fluid" />
             </NavLink>
             <button
               className="navbar-toggler"

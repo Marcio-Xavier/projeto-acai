@@ -27,29 +27,3 @@ app.listen(4000, () => {
 });	
 
 //console.log(connection); Ver config da conexão com o banco
-
-const selectUsuario = "select * from usuario";
-
-app.get("/usuario", (req, res) => {
-connection.query(selectUsuario, (err, results) => {
-if (err) {
-  return res.json(err);
-} else {
-  return res.json({
-	data: results
-  });
-}
-});
-});
-
-app.get("/usuario/add", (req, res) => {
-  const { nome, nick, senha } = req.query;
-  const insertProducts = `insert into usuario (nome, nick, senha) values ('${nome}','${nick}','${senha}')`;
-  connection.query(insertProducts, (err, results) => {
-    if (err) {
-      return res.send(err);
-    } else {
-      return res.send("Usuario Adicionado");
-    }
-  });
-});
