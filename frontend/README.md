@@ -1,3 +1,5 @@
+Step-by-step to install in the end
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -42,3 +44,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+STEP-BT-STEP
+1. Open cmd in root folder and run `npm start`. Do the same in the folders 'frontend' and 'backend'
+2. In this project, I'm using a bootstrap template from [Bootswatch](http://www.bootswatch.com). If you want, you'll need to add a template manually. In person, my template is [Litera](http://www.bootswatch.com/litera). Otherwise, use default Bootstrap and correct the importation in `index.js` file
+3. Finally, run `npm start` in root to run the front and the backend.
+Hope you like :)
