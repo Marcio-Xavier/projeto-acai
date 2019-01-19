@@ -16,7 +16,7 @@ class ProdutoForm extends Component {
               <th scope="col">Descrição</th>
               <th scope="col">Preço</th>
               <th scope="col">Qtd. Estoque</th>
-              <th scope="col">Observações</th>
+              <th scope="col">Ativo?</th>
               <th scope="col">Ações</th>
             </tr>
           </thead>
@@ -25,7 +25,7 @@ class ProdutoForm extends Component {
               <td>Açaí 500 ml</td>
               <td>R$ 12,00</td>
               <td>-</td>
-              <td>-</td>
+              <td>Checkbox</td>
               <td>
                 <div
                   className="btn-group btn-group-toggle btn-sm"
@@ -37,7 +37,7 @@ class ProdutoForm extends Component {
                   </label>
                   <label className="btn btn-danger">
                     <input type="radio" autocomplete="off" />
-                    Excluir
+                    Remover
                   </label>
                 </div>
               </td>

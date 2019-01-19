@@ -46,7 +46,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 STEP-BT-STEP
-1. Open cmd as admin and run `npm i` in the folders 'frontend' and 'backend'
+
+1. Open cmd as admin and run `npm i` in the root folder. Do the same in the folders 'frontend' and 'backend'.
 2. In this project, I'm using a bootstrap template from [Bootswatch](http://www.bootswatch.com). If you want, you'll need to add a template manually. In person, my template is [Litera](http://www.bootswatch.com/litera). Otherwise, use default Bootstrap and correct the importation in `index.js` file
 3. Finally, run `npm start` in root to run the front and the backend.
-Hope you like :)
+   Hope you like :)
