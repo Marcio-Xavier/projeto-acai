@@ -8,7 +8,11 @@ class NavBar extends Component {
         <div>
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <NavLink className="navbar-brand" to="/">
-              <img src={require("./acai-logo.png")} className="img-fluid" />
+              <img
+                src={require("./acai-logo.png")}
+                className="img-fluid"
+                alt="Açaí"
+              />
             </NavLink>
             <button
               className="navbar-toggler"
