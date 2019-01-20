@@ -16,17 +16,17 @@ const Root = () => (
   <React.Fragment>
     <Switch>
       <Route path="/home" component={PaginaInicial} />
-      <Route path="/inserir-venda" component={ScreenVendaForm} />
-      <Route path="/listar-venda" component={ScreenVendaList} />
-      <Route path="/inserir-produto" component={ScreenProdutoForm} />
-      <Route path="/listar-produto" component={ScreenProdutoList} />
-      <Route path="/inserir-usuario" component={ScreenUsuarioForm} />
-      <Route path="/listar-usuario" component={ScreenUsuarioList} />
+      <Route path="/venda/inserir" component={ScreenVendaForm} />
+      <Route path="/venda/listar" component={ScreenVendaList} />
+      <Route path="/produto/inserir" component={ScreenProdutoForm} />
+      <Route path="/produto/listar" component={ScreenProdutoList} />
+      <Route path="/usuario/inserir" component={ScreenUsuarioForm} />
+      <Route path="/usuario/listar" component={ScreenUsuarioList} />
       <Route path="/sobre" component={ScreenAbout} />
 
       <Redirect from="/" exact to="/home" />
-      <Route path="/nao-encontrado" component={NotFound} />
-      <Redirect to="/nao-encontrado" />
+      <Route path="/inexistente" component={NotFound} />
+      <Redirect to="/inexistente" />
     </Switch>
   </React.Fragment>
 );

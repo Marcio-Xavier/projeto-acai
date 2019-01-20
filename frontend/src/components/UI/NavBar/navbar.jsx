@@ -28,13 +28,13 @@ class NavBar extends Component {
 
             <div className="collapse navbar-collapse" id="navbarColor01">
               <ul className="navbar-nav mr-auto">
-                <NavLink className="nav-item nav-link" to="/inserir-venda">
+                <NavLink className="nav-item nav-link" to="/venda/inserir">
                   Venda
                 </NavLink>
-                <NavLink className="nav-item nav-link" to="/inserir-produto">
+                <NavLink className="nav-item nav-link" to="/produto/inserir">
                   Produtos
                 </NavLink>
-                <NavLink className="nav-item nav-link" to="/inserir-usuario">
+                <NavLink className="nav-item nav-link" to="/usuario/inserir">
                   Usuários
                 </NavLink>
                 <li className="nav-item dropdown">
@@ -52,14 +52,14 @@ class NavBar extends Component {
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
                   >
-                    <NavLink className="dropdown-item" to="/listar-venda">
+                    <NavLink className="dropdown-item" to="/venda/listar">
                       Vendas
                     </NavLink>
-                    <NavLink className="dropdown-item" to="/listar-produto">
+                    <NavLink className="dropdown-item" to="/produto/listar">
                       Produtos
                     </NavLink>
                     <div className="dropdown-divider" />
-                    <NavLink className="dropdown-item" to="/listar-usuario">
+                    <NavLink className="dropdown-item" to="/usuario/listar">
                       Usuários
                     </NavLink>
                   </div>

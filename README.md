@@ -49,5 +49,7 @@ STEP-BT-STEP
 
 1. Open cmd as admin and run `npm i` in the root folder. Do the same in the folders 'frontend' and 'backend'.
 2. In this project, I'm using a bootstrap template from [Bootswatch](http://www.bootswatch.com). If you want, you'll need to add a template manually. In person, my template is [Litera](http://www.bootswatch.com/litera). Otherwise, use default Bootstrap and correct the importation in `index.js` file
-3. Finally, run `npm start` in root to run the front and the backend.
-   Hope you like :)
+3. Now, you'll need to set up your MySQl database. Basicaly, run the query present in '_database/query'. This will create the database, and the respectives tables. Attention to configure your connection string of the file 'backend/Index.js' with yours specifics values.
+4. Finally, run `npm start` in root to run the front and the backend. Hope you like :)
+
+And rember, this is in development yet. I have no hurry to finish this project. This is for academic purposes only.

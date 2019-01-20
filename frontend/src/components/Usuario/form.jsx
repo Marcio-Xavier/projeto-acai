@@ -33,11 +33,19 @@ class UsuarioForm extends Component {
       .catch(err => console.log(err));
   };
 
+  deleteUsuario = id => {
+    fetch(`http://localhost:4000/usuarios/delete?id=${id}`)
+      .then(this.getUsuarios)
+      .catch(err => console.log(err));
+  };
   renderProduct = ({ id, nome, nick, senha }) => (
     <tr key={id}>
       <td>{nome}</td>
       <td>{nick}</td>
       <td>{senha}</td>
+      <td>
+        <button className="btn btn-danger btn-sm">Remover</button>
+      </td>
     </tr>
   );
 
@@ -45,7 +53,8 @@ class UsuarioForm extends Component {
     const { usuario, usuarios } = this.state;
     return (
       <React.Fragment>
-        <legend>Usuários</legend>
+        <p className="lead">Inserir Usuário</p>
+        <hr />
         <div className="col-6">
           <div className="form-group">
             <label>Nome</label>
@@ -98,6 +107,7 @@ class UsuarioForm extends Component {
               <th scope="col">Nome</th>
               <th scope="col">Nick</th>
               <th scope="col">Senha</th>
+              <th scope="col">Ações</th>
             </tr>
           </thead>
           <tbody>{usuarios.map(this.renderProduct)}</tbody>

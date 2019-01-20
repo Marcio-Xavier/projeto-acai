@@ -4,12 +4,11 @@ class NotFound extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container">
-          <h3>
-            Conteúdo não encontrado, verifique o link digitado na barra de
-            enderço.
-          </h3>
-        </div>
+        <h3>
+          <i class="fa fa-frown-o fa-3x" aria-hidden="true" />
+          <hr />
+          Página não encontrada.
+        </h3>
       </React.Fragment>
     );
   }

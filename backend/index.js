@@ -31,9 +31,10 @@ app.listen(4000, () => {
 //console.log(connection);
 
 //Api Usuario
-const selectUsuario = "select * from usuario";
 
+//GET Usuario Ok 
 app.get("/usuarios", (req, res) => {
+const selectUsuario = "select * from usuario";
 connection.query(selectUsuario, (err, results) => {
 if (err) {
   return res.json(err);
@@ -44,15 +45,27 @@ if (err) {
 }
 });
 });
-
+//ADD Usuario Ok
 app.get("/usuarios/add", (req, res) => {
   const { nome, nick, senha } = req.query;
-  const insertProducts = `insert into usuario (nome, nick, senha) values ('${nome}','${nick}','${senha}')`;
-  connection.query(insertProducts, (err, results) => {
+  const insertUsuario = `insert into usuario (nome, nick, senha) values ('${nome}','${nick}','${senha}')`;
+  connection.query(insertUsuario, (err, results) => {
 	if (err) {
 	  return res.send(err);
 	} else {
 	  return res.send("Usuario Adicionado");
 	}
+  });
+});
+//DELETE Usuario Ok
+app.get("/usuarios/delete", (req,res) =>{
+	const { id } = req.query;
+	const deleteUsuario = `delete from usuario where id = ${id}`;
+	connection.query(deleteUsuario,(err,results) => {
+		if(err){
+			return res.send(err);
+		}else{
+			return res.send(`Usuário excluído. Id: ${id}`);
+		}
   });
 });
