@@ -7,9 +7,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <NavBar />
-      <div className="container">
-        <Root />
-      </div>
+      <Root />
       <hr />
       <Footer />
     </React.Fragment>

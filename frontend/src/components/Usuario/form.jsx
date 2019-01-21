@@ -37,6 +37,7 @@ class UsuarioForm extends Component {
     fetch(`http://localhost:4000/usuarios/delete?id=${id}`)
       .then(this.getUsuarios)
       .catch(err => console.log(err));
+    console.log("Deleted:" + id);
   };
   renderProduct = ({ id, nome, nick, senha }) => (
     <tr key={id}>
@@ -44,7 +45,12 @@ class UsuarioForm extends Component {
       <td>{nick}</td>
       <td>{senha}</td>
       <td>
-        <button className="btn btn-danger btn-sm">Remover</button>
+        <button
+          onClick={() => this.deleteUsuario(id)}
+          className="btn btn-danger btn-sm"
+        >
+          Remover
+        </button>
       </td>
     </tr>
   );
@@ -53,65 +59,67 @@ class UsuarioForm extends Component {
     const { usuario, usuarios } = this.state;
     return (
       <React.Fragment>
-        <p className="lead">Inserir Usuário</p>
-        <hr />
-        <div className="col-6">
-          <div className="form-group">
-            <label>Nome</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Nome"
-              onChange={e =>
-                this.setState({
-                  usuario: { ...usuario, nome: e.target.value }
-                })
-              }
-            />
+        <div className="container">
+          <p className="lead">Inserir Usuário</p>
+          <hr />
+          <div className="col-6">
+            <div className="form-group">
+              <label>Nome</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Nome"
+                onChange={e =>
+                  this.setState({
+                    usuario: { ...usuario, nome: e.target.value }
+                  })
+                }
+              />
+            </div>
+            <div className="form-group">
+              <label>Nick</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Nome"
+                onChange={e =>
+                  this.setState({
+                    usuario: { ...usuario, nick: e.target.value }
+                  })
+                }
+              />
+            </div>
+            <div className="form-group">
+              <label>Senha</label>
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Senha"
+                onChange={e =>
+                  this.setState({
+                    usuario: { ...usuario, senha: e.target.value }
+                  })
+                }
+              />
+            </div>
+            <button className="btn btn-success" onClick={this.addUsuario}>
+              Salvar
+            </button>
           </div>
-          <div className="form-group">
-            <label>Nick</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Nome"
-              onChange={e =>
-                this.setState({
-                  usuario: { ...usuario, nick: e.target.value }
-                })
-              }
-            />
-          </div>
-          <div className="form-group">
-            <label>Senha</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Senha"
-              onChange={e =>
-                this.setState({
-                  usuario: { ...usuario, senha: e.target.value }
-                })
-              }
-            />
-          </div>
-          <button className="btn btn-success" onClick={this.addUsuario}>
-            Salvar
-          </button>
+          <hr />
+          <p className="lead">Lista de Usuários</p>
+          <table className="table table-striped">
+            <thead className="thead-dark">
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Nick</th>
+                <th scope="col">Senha</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>{usuarios.map(this.renderProduct)}</tbody>
+          </table>
         </div>
-        <hr />
-        <p className="lead">Lista de Usuários</p>
-        <table className="table table-striped">
-          <thead className="thead-dark">
-            <tr>
-              <th scope="col">Nome</th>
-              <th scope="col">Nick</th>
-              <th scope="col">Senha</th>
-              <th scope="col">Ações</th>
-            </tr>
-          </thead>
-          <tbody>{usuarios.map(this.renderProduct)}</tbody>
-        </table>
       </React.Fragment>
     );
   }
